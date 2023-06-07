@@ -1,6 +1,25 @@
-import { Stage, Layer, Rect, Circle, RegularPolygon, Shape } from "react-konva";
+import Konva from 'konva';
+import { Stage, Layer, Rect, Circle, RegularPolygon, Shape } from 'react-konva';
 
 export default function Section1() {
+  const handleDragEnd = (e) => {
+    e.target.to({
+      duration: 0.5,
+      easing: Konva.Easings.ElasticEaseOut,
+      scaleX: 1,
+      scaleY: 1,
+      shadowOffsetX: 5,
+      shadowOffsetY: 5
+    });
+  };
+  const handleDragStart = (e) => {
+    e.target.setAttrs({
+      shadowOffset: { x: 15, y: 15 },
+      scaleX: 1.2,
+      scaleY: 1.2
+    });
+  };
+
   return (
     <Stage width={window.innerWidth} height={window.innerHeight}>
       <Layer>
@@ -33,6 +52,8 @@ export default function Section1() {
       </Layer>
       <Layer>
         <Circle
+          onDragStart={handleDragStart}
+          onDragEnd={handleDragEnd}
           draggable
           x={50}
           y={50}

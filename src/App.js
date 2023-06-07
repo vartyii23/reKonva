@@ -1,7 +1,7 @@
-import Section1 from "./group/Section1";
-import "./app.scss";
-import Button from "./group/Button";
-import Header from "./group/Header";
+import Section1 from './group/Section1';
+import './app.scss';
+import Button from './group/Button';
+import Header from './group/Header';
 
 export default function App() {
   return (

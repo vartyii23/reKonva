@@ -1,5 +1,5 @@
 //allow nested modules export in diff file
-import styles from "./Button.module.scss";
+import styles from './Button.module.scss';
 
 const Button = () => {
   return (
